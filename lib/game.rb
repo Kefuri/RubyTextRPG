@@ -6,4 +6,9 @@ class Player
     @items = items
     @status_effects = []
   end
+
+  def set_name(name)
+    puts "Name set to Haydon"
+  end
+  
 end
