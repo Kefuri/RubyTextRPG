@@ -8,7 +8,7 @@ class Player
   end
 
   def set_name(name)
-    puts "Name set to Haydon"
+    puts "Name set to #{name}"
   end
-  
+
 end
