@@ -11,4 +11,10 @@ describe Player do
       expect { subject.set_name(name) }.to output("Name set to #{name}\n").to_stdout
     end
   end
+
+  describe '#show_items' do
+    it "should show a list of items in the user's inventory" do
+      expect { subject.show_items }.to output("It's empty here...\n").to_stdout
+    end
+  end
 end

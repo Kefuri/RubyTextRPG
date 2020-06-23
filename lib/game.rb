@@ -11,4 +11,8 @@ class Player
     puts "Name set to #{name}"
   end
 
+  def show_items
+    puts "It's empty here..."
+  end
+
 end
