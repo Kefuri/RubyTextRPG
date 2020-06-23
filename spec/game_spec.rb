@@ -13,8 +13,14 @@ describe Player do
   end
 
   describe '#show_items' do
-    it "should show a list of items in the user's inventory" do
+    it "should show a message when item inventory is empty" do
       expect { subject.show_items }.to output("It's empty here...\n").to_stdout
     end
+
+    it "should show a list of items when the user inventory is not empty" do
+      user = Player.new("Haydon", 100, ["Sword"])
+      expect { user.show_items }.to output("==>Inventory<==\n==> Sword ==> QTY - 1\n").to_stdout
+    end
+
   end
 end
