@@ -12,11 +12,21 @@ class Player
   end
 
   def show_items
-    if @items.length > 0
-      puts "==>Inventory<=="
-      puts "==> Sword ==> QTY - 1"
+    if @items.length == 0
+      puts "It's empty here..."
       return
     end
-    puts "It's empty here..."
+    get_item_list
+  end
+
+  private
+
+  def get_item_list
+    puts "==>Inventory<=="
+    itemindex = 0
+    @items.length.times do
+      puts "==> #{@items[itemindex]} ==> QTY - 1"
+      itemindex += 1
+    end
   end
 end

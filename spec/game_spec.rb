@@ -22,5 +22,10 @@ describe Player do
       expect { user.show_items }.to output("==>Inventory<==\n==> Sword ==> QTY - 1\n").to_stdout
     end
 
+    it "should be able to display a large list of items" do
+      user = Player.new("Haydon", 100, ["Sword", "Shield"])
+      expect { user.show_items }.to output("==>Inventory<==\n==> Sword ==> QTY - 1\n==> Shield ==> QTY - 1\n").to_stdout
+    end
+
   end
 end
