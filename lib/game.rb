@@ -17,6 +17,10 @@ class Player
   end
 
   def take_damage(damage)
+    if damage == 0 
+      puts "The attack bounced off of you! 0 damage taken. Remaining HP: 100\n"
+      return
+    end
     puts "#{self.name} took 10 damage! Remaining HP: 90"
   end
 
