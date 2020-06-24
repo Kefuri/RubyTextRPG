@@ -18,10 +18,11 @@ class Player
 
   def take_damage(damage)
     if damage == 0 
-      puts "The attack bounced off of you! 0 damage taken. Remaining HP: 100\n"
+      puts "The attack bounced off of you! 0 damage taken. Remaining HP: #{@hp}\n"
       return
     end
-    puts "#{self.name} took 10 damage! Remaining HP: 90"
+    @hp -= damage
+    puts "#{self.name} took #{damage} damage! Remaining HP: #{@hp}"
   end
 
   def show_items

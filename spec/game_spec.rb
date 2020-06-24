@@ -36,5 +36,11 @@ describe Player do
     it "should display a special message when the user takes no damage" do
       expect { subject.take_damage(0) }.to output("The attack bounced off of you! 0 damage taken. Remaining HP: 100\n").to_stdout
     end
+
+    it "should handle the user taking damage multiple times" do
+      expect{ subject.take_damage(10) }.to output("#{subject.name} took 10 damage! Remaining HP: 90\n").to_stdout
+      expect{ subject.take_damage(30) }.to output("#{subject.name} took 30 damage! Remaining HP: 60\n").to_stdout
+      expect{ subject.take_damage(0) }.to output("The attack bounced off of you! 0 damage taken. Remaining HP: 60\n").to_stdout
+    end
   end
 end
