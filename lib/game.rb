@@ -1,14 +1,23 @@
 class Player
   
-  def initialize(name="", hp=100, items=[])
+  def initialize(name="", hp=100, attack=10, items=[])
     @name = name
     @hp = hp
+    @base_attack = attack
     @items = items
     @status_effects = []
   end
 
   def set_name(name)
     puts "Name set to #{name}"
+  end
+
+  def name
+    return @name
+  end
+
+  def take_damage(damage)
+    puts "#{self.name} took 10 damage! Remaining HP: 90"
   end
 
   def show_items
