@@ -16,13 +16,17 @@ class Player
     return @name
   end
 
+  def hp
+    return @hp
+  end
+
   def take_damage(damage)
     if damage == 0 
-      puts "The attack bounced off of you! 0 damage taken. Remaining HP: #{@hp}\n"
+      puts "The attack bounced off of you! 0 damage taken. Remaining HP: #{self.hp}\n"
       return
     end
-    @hp -= damage
-    puts "#{self.name} took #{damage} damage! Remaining HP: #{@hp}"
+    change_hp(damage)
+    puts "#{self.name} took #{damage} damage! Remaining HP: #{self.hp}"
   end
 
   def show_items
@@ -34,6 +38,12 @@ class Player
   end
 
   private
+
+  def change_hp(hp)
+    @hp -= hp
+    @hp.negative? ? @hp = 0 : nil
+    return @hp
+  end
 
   def get_item_list
     puts "==>Inventory<=="

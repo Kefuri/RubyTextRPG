@@ -42,5 +42,10 @@ describe Player do
       expect{ subject.take_damage(30) }.to output("#{subject.name} took 30 damage! Remaining HP: 60\n").to_stdout
       expect{ subject.take_damage(0) }.to output("The attack bounced off of you! 0 damage taken. Remaining HP: 60\n").to_stdout
     end
+
+    it "should prevent the user from going below 0 hp" do
+      expect{ subject.take_damage(101) }.to output("#{subject.name} took 101 damage! Remaining HP: 0\n").to_stdout
+      expect(subject.hp).to eq(0)
+    end
   end
 end
