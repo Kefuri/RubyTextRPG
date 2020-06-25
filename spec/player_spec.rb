@@ -1,4 +1,4 @@
-require 'game'
+require 'player'
 
 describe Player do
   describe '#set_name' do
